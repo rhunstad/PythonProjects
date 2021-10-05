@@ -14,6 +14,7 @@ def main():
     count = 1
     print("Enter the sort algorithms below to compare their computational time. \n")
     for i in range(2):
+    while entry != 'x':
         entry = input("Algorithm #%s ('s' = selection sort, 'b' = bubble sort'): " % count)
         if entry == 'b':
             entry = 'bubble_sort'
@@ -21,11 +22,10 @@ def main():
         elif entry == 's':
             entry = 'selection_sort'
             series += [entry]
-            
         count += 1
 
-    start = int(input("Minimum size of randomly generated lists to sort: "))
-    end = int(input("Maximum size of randomly generated lists to sort: "))
+    start = int(input("Size of lists, start: "))
+    end = int(input("Size of lists, end: "))
     cap = int(input("Max random value: "))
 
     x = np.arange(start, end, 1)
@@ -176,8 +176,14 @@ class Algo(object):
         return fib
 
 
-if __name__ == '__main__': 
-
+if __name__ == '__main__':
+    """
+    n = ""
+    while n != -1:
+        n = input("How many fibonacci numbers: ")
+        fib_n = Algo.fib(n)
+        print(fib_n)
+    """
     main()
     import subprocess
     FileName = "algorithms.xlsx"

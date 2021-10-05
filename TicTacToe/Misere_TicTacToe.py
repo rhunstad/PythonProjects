@@ -17,7 +17,7 @@ exes = {}
 root = Tk()
 root.title('Misere Tic-Tac-Toe')
 width = 500
-height = 500
+height = 550
 root.geometry('%sx%s' % (width, height))
 canvas = Canvas(root, width=width, height=height, highlightthickness=0)
 e = canvas.create_text(225, 30, fill='#13B2E9', font='Arial 30', text="Player 1's turn",
@@ -146,7 +146,9 @@ def setup():
     canvas.create_text(200-15 + 90/2, 420 + 30/2, fill='#FAFFFF', font='Arial 18', text='RESTART',
                        anchor='center')
 
-    canvas.create_text(232, 475, fill='#776E65', font='Arial 16', text="First to complete 3 X's in-a-row loses",
+    canvas.create_text(232, 475, fill='#776E65', font='Arial 16', text="First to complete any 3 X's in-a-row loses",
+                       anchor='center')
+    canvas.create_text(232, 500, fill='#776E65', font='Arial 16', text="Both players play X's, no O's",
                        anchor='center')
 
     for r in range(4):

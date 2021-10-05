@@ -140,14 +140,12 @@ def keyed(event):
         leftarrow = str("".join(["'", '\\', 'u', 'f', '7', '0', '2', "'"]))
         rightarrow = str("".join(["'", '\\', 'u', 'f', '7', '0', '3', "'"]))
 
-        print(lett, downarrow, lett==downarrow)
         shift = ""
         if lett == uparrow:
             shift = 'up'
             game(shift)
         elif lett == downarrow:
             shift = 'down'
-            print(shift)
             game(shift)
         elif lett == leftarrow:
             shift = 'left'
@@ -238,7 +236,6 @@ def move(shift, live):
     global tiles
     start = 0
     inc = 1
-    print(shift)
     if (shift == 'down') | (shift == 'right'):
         start = 3
         inc = -1
@@ -541,7 +538,7 @@ def on_exit():
     f = open('resumegame.txt', 'w')
     f.write(out)
     f.close()
-    sys.exit(0)
+    root.destroy()
 
 
 def resume_game():

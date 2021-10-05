@@ -59,7 +59,7 @@ import base64
 
 # Perform the main key determination and exchange
 def main():
-    scale = int(input("Enter byte-length to use for numbers p, a, b (warning: anything >10 takes a long time): "))
+    scale = int(input("\nEnter byte-length to use for numbers p, a, b (warning: anything >10 takes a long time): "))
     p = find_prime(2**(scale+1)-1)
     
     # group = multiplicative_group(p)  # Commented out because it took too long and was redundant
@@ -70,18 +70,18 @@ def main():
     key = confirm(g, p, a, b)                   # Checks to see if the 2 asymmetric keys match
     if key:                                     # If key is not False, it is a list containing the numeric key
         key = str(key).encode("utf-8")
-        print("Diffie-Hellman shared secret number: ", key)
+        print("\nDiffie-Hellman shared secret number: ", key)
         
         key = base64.urlsafe_b64encode(hashlib.pbkdf2_hmac('sha256', key, key, 100000))
-        print("DH shared secret (hashed in sha256): ", key)
+        print("\nDH shared secret (hashed in sha256): ", key)
         
         f = Fernet(key)             # Generate key
         
-        usr = input("Enter message to be encrypted: ")
+        usr = input("\nEnter message to be encrypted: ")
         enc = f.encrypt(usr.encode("utf-8"))
-        print("Encrypted message: ", enc)
+        print("\nEncrypted message: ", enc)
         dec = f.decrypt(enc)
-        print("Decrypted Message: ", dec)
+        print("\nDecrypted Message: ", dec)
     else:
         print("Nope :/")
 
