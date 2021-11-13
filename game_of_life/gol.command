@@ -1,0 +1,1 @@
+python /Users/rylandhunstad/Desktop/Projects/"Python Project Src Files"/GameofLife/game_of_life.py

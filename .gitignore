@@ -1,0 +1,7 @@
+.DS_Store
+first_flask/
+imessage/chat.db
+imessage/convo.csv
+imessage/messages.csv
+imessage/contacts.xlsx
+twitter/
